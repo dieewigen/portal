@@ -21,8 +21,6 @@ $screenshot[] = array('screenshot2.jpg', 'Screenshot 1');
 $screenshot[] = array('screenshot1.jpg', 'Screenshot 2');
 $screenshot[] = array('screenshot3.jpg', 'Screenshot 3');
 $screenshot[] = array('screenshot4.jpg', 'Screenshot 4');
-$screenshot[] = array('screenshot5.jpg', 'Screenshot 5');
-$screenshot[] = array('screenshot6.jpg', 'Screenshot 6');
 
 //galerie-defs
 

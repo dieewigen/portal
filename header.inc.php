@@ -1,25 +1,14 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="de">
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title><?=$homepage_title?></title>
-<?=$homepage_meta?>
-<link href="default.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-<!--
-	@import url("layout.css");
--->
-</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><?php echo $homepage_title?></title>
+<?php echo $homepage_meta?>
+<link href="default.css?<?php echo filemtime('default.css')?>" rel="stylesheet" type="text/css">
 </head>
 <body>
-<?php
-/*
-<div class="chlang">
-<img src="image/de.gif" border="0" alt="Deutsch" info="Deutsch">
-<a href="http://eng.die-ewigen.com"><img src="image/uk.gif" border="0"  alt="Englisch" info="Englisch"></a>
-</div>
-*/
-?>
+
 <div id="header">
     <p id="logo">&nbsp;</p>
 </div>

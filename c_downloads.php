@@ -9,27 +9,6 @@ $homepage_meta='
 
 
 $homepage_content='
-<TABLE class=NOBORDER borderColor=#000000 cellSpacing=0 cellPadding=0 border=0>
-<TBODY>
-<TR>
-<TD><STRONG><U>Die Ewigen Grafikpack</U></STRONG></TD></TR>
-<TR>
-<TD>&nbsp;</TD></TR>
-<TR>
-<TD>
-
-<P>Hier kann man das Grafikpack f&uuml;r DE herunterladen:<BR><BR>
-
-Aktuelles Grafikpack (ohne EFTA): <A href="http://die-ewigen.com/download/degp3.zip" target=_blank>Download</A><BR><BR>
-
-Grafikpack-Addon f&uuml;r EFTA: - <A href="http://die-ewigen.com/download/eftaaddon_003.zip" target=_blank>Download</A><BR><BR>
-
-Infos zur Installation sind in der Ewigen-FAQ zu finden: <A href="http://help.bgam.es/index.php?thread=de_de&post=22" target=_blank>FAQ</A><BR><BR><A href="http://forum.bgam.es/thread.php?threadid=1792&amp;sid=" target=_blank>Weiteres hier</A>&nbsp;</P></TD></TR>
-<TR><TD></TD></TR>
-<TR>
-<TD>&nbsp;</TD></TR></TBODY></TABLE>
-
-<P>&nbsp;</P>
 <TABLE>
 <tr>
 <td align="center"><b>Banner</b></td></tr>
