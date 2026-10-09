@@ -1,65 +1,17 @@
-</div>
-<div id="footer">
-  <div style="text-align:center; padding:10px;">
-  
-<?php
-
-echo '&copy; 2001-'.date('Y').' <a href="http://www.die-ewigen.com" target="_new">DIE EWIGEN</a>';
-
-?>
-  </div>
-  </div>
-</div>
-
-<script>
-// Burger Menu Toggle Function
-function toggleMenu() {
-    const burger = document.querySelector('.burger-menu');
-    const nav = document.querySelector('#sci-fi-nav');
-    
-    burger.classList.toggle('active');
-    nav.classList.toggle('active');
-}
-
-// Close menu when clicking outside
-document.addEventListener('click', function(event) {
-    const burger = document.querySelector('.burger-menu');
-    const nav = document.querySelector('#sci-fi-nav');
-    
-    if (!burger.contains(event.target) && !nav.contains(event.target)) {
-        burger.classList.remove('active');
-        nav.classList.remove('active');
-    }
-});
-
-// Close menu when pressing Escape
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        const burger = document.querySelector('.burger-menu');
-        const nav = document.querySelector('#sci-fi-nav');
-        
-        burger.classList.remove('active');
-        nav.classList.remove('active');
-    }
-});
-
-// Add sci-fi effects
-document.addEventListener('DOMContentLoaded', function() {
-    // Add hover sound effect (optional)
-    const menuItems = document.querySelectorAll('#sci-fi-nav a');
-    
-    menuItems.forEach(item => {
-        item.addEventListener('mouseenter', function() {
-            // Optional: Add subtle animation or sound
-            this.style.textShadow = '0 0 10px #4EC9FF';
-        });
-        
-        item.addEventListener('mouseleave', function() {
-            this.style.textShadow = 'none';
-        });
-    });
-});
-</script>
-
+</main>
+<footer class="fuss">
+    <div class="fuss-innen">
+        <p>&copy; 2001-<?php echo date('Y'); ?> DIE EWIGEN</p>
+        <ul class="fuss-links">
+            <li><a href="c_impressum.php">Impressum</a></li>
+            <li><a href="c_datenschutz.php">Datenschutz</a></li>
+            <li><a href="c_agb.php">Regeln</a></li>
+            <li><a href="<?php echo h($links['hilfe']); ?>" target="_blank" rel="noopener">Hilfe</a></li>
+            <li><a href="<?php echo h($links['discord']); ?>" target="_blank" rel="noopener">Discord</a></li>
+            <li><a href="<?php echo h($links['facebook']); ?>" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+    </div>
+</footer>
+<?php echo $homepage_scripts; ?>
 </body>
 </html>

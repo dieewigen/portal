@@ -1,17 +1,14 @@
 <?php
-session_start();
-if(isset($_REQUEST["a"]))
-{
-  $_SESSION['a'] = intval($_REQUEST["a"]);
+// Layout zusammensetzen: Kopf, Inhalt, Fuß. Erwartet $homepage_content von der aufrufenden Seite.
+include_once 'site.inc.php';
+include 'header.inc.php';
+
+if ($homepage_layout === 'start') {
+    echo $homepage_content;
+} elseif ($homepage_layout === 'breit') {
+    echo '<article class="seite seite-breit">' . $homepage_content . '</article>';
+} else {
+    echo '<article class="seite">' . $homepage_content . '</article>';
 }
 
-if(isset($_REQUEST["cooperation"]))
-{
-  $_SESSION['cooperation'] = intval($_REQUEST["cooperation"]);
-}
-
-include "header.inc.php";
-include "p_s1.inc.php";
-include "p_s2.inc.php";
-include "footer.inc.php";
-?>
+include 'footer.inc.php';

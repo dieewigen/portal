@@ -1,22 +1,11 @@
 <?php
-//url zu den grafiken
+// Bilderlisten für c_screenshots.php, index.php und si.php.
+// Zu jedem Bild gehört ein Vorschaubild mit dem Zusatz _s (g026.jpg und g026_s.jpg), beide liegen in $url.
 $url='images/screenshots/';
 
-//hier alle bilder definieren
-/*
-$screenshot[] = array('001.gif', 'Screenshot 1');
-$screenshot[] = array('002.gif', 'Screenshot 2');
-$screenshot[] = array('003.gif', 'Screenshot 3');
-$screenshot[] = array('004.gif', 'Screenshot 4');
-$screenshot[] = array('005.gif', 'Screenshot 5');
-$screenshot[] = array('006.gif', 'Screenshot 6');
-$screenshot[] = array('007.gif', 'Screenshot 7');
-$screenshot[] = array('008.gif', 'Screenshot 8');
-$screenshot[] = array('009.gif', 'Screenshot 9');
-$screenshot[] = array('010.gif', 'Screenshot 10');
-$screenshot[] = array('011.gif', 'Screenshot 11');
-$screenshot[] = array('012.gif', 'Screenshot 12');
-*/
+// Spielansichten: Screenshots der Oberfläche. Diese Bilder zeigen noch die Ansicht von 2010.
+// Neue Screenshots der Standard-Ansicht (Karte mit Konsolenleiste), der Classic-Ansicht und
+// der Mobilversion hier eintragen, z. B. array('standard.jpg', 'Standard-Ansicht mit Sternenkarte').
 $screenshot[] = array('screenshot2.jpg', 'Screenshot 1');
 $screenshot[] = array('screenshot1.jpg', 'Screenshot 2');
 $screenshot[] = array('screenshot3.jpg', 'Screenshot 3');
@@ -187,6 +176,22 @@ $galerie[] = array('g014.jpg', 'Ishtar - Colossus 1. Entwurf');
 
 $galerie[] = array('g011.jpg', 'Ishtar - Charakter 1');
 $galerie[] = array('g012.jpg', 'Ishtar - Charakter 2');
+
+// Namen der Rassen für die Überschriften der Galerie (Schlüssel = Rassen-ID aus den Einträgen oben)
+$rassen = array(
+    1 => 'Die Ewigen',
+    2 => 'Ishtar',
+    3 => 'K&#180;Tharr',
+    4 => 'Die Z&#180;tah-ara',
+);
+
+// Bilder für den Abschnitt "Einblicke ins Spiel" auf der Startseite (großes Bild, kein Vorschaubild nötig).
+// Sobald neue Screenshots der Spielansichten vorliegen, gehören sie hier an die erste Stelle.
+$startseite_bilder = array(
+    array('g026.jpg', 'Die Ewigen - Hydra'),
+    array('g033.jpg', 'Ishtar - Merlin'),
+    array('g023.jpg', 'Die Ewigen - Zerberus'),
+);
 
 
 

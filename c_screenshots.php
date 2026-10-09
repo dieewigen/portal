@@ -1,89 +1,59 @@
 <?php
+include_once 'site.inc.php';
 include 'c_screenshotdefs.inc.php';
 
-$homepage_page=7;
+$homepage_layout  = 'breit';
+$homepage_title   = 'Screenshots | Die Ewigen';
+$homepage_meta    = '<meta name="description" content="Screenshots aus Die Ewigen: Spielansichten, Raumschiffe, Verteidigungsanlagen, Gebäude und Forschungen der vier Rassen.">';
+$homepage_scripts = '<script src="js/galerie.js?' . filemtime('js/galerie.js') . '"></script>';
 
-$homepage_title='Screenshots | Portal | Die Ewigen | www.die-ewigen.com';
-
-$homepage_meta='
-<META Name="keywords" Content="Die Ewigen, www.die-ewigen.com, MMORPG, MMORS, Online, Game, Universum, Erhabener, Handel, Krieg, Strategie, Diplomatie, browsergame, browsergames, onlinespiel, onlinespiele, online spiel, online spiele, onlinegame, onlinegames, krieg, kriege, epische schlachten, handel, kostenlos, kostenfrei, Screenshots, Screenshot, Bilder, Bild">
-<meta name="description" content="Bevor du dich anmeldest willst du erstmal Screenshots von Die Ewigen betrachten? Schau sie dir an und entscheide dich f�r Die Ewigen!">
-<link href="fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>';
-
-$homepage_content='
-<h1>Ingame Screenshots</h1>
-	<br>
-<p>Zum vergr&ouml;ssern der Bilder bitte auf den gew&uuml;nschten Screenshot klicken.</p>
-<div align="left">
-<table border="0" cellspacing="0" cellpadding="0">';
-
-//Screenshots
-
-$width=160;
-$height=100;
-
-for ($i=0;$i<=count($screenshot);$i=$i+3){
-	if(isset($screenshot[$i]) && $screenshot[$i][0]!='')$s[0]='<a class="fancybox" rel="gal1" href="images/screenshots/'.$screenshot[$i][0].'" title="'.$screenshot[$i][1].'"><img alt="'.$screenshot[$i][1].'" title="'.$screenshot[$i][1].'" src="'.$url.str_replace('.', '_s.',$screenshot[$i][0]).'" border="0" align="top"></a>';
-	else $s[0]='&nbsp;';
-	if(isset($screenshot[$i+1]) && $screenshot[$i+1][0]!='')$s[1]='<a class="fancybox" rel="gal1" href="images/screenshots/'.$screenshot[$i+1][0].'" title="'.$screenshot[$i+1][1].'"><img alt="'.$screenshot[$i+1][1].'" title="'.$screenshot[$i+1][1].'" src="'.$url.str_replace('.', '_s.',$screenshot[$i+1][0]).'" border="0" align="top"></a>';
-	else $s[1]='&nbsp;';
-	if(isset($screenshot[$i+2]) && $screenshot[$i+2][0]!='')$s[2]='<a class="fancybox" rel="gal1" href="images/screenshots/'.$screenshot[$i+2][0].'" title="'.$screenshot[$i+2][1].'"><img alt="'.$screenshot[$i+2][1].'" title="'.$screenshot[$i+2][1].'" src="'.$url.str_replace('.', '_s.',$screenshot[$i+2][0]).'" border="0" align="top"></a>';
-	else $s[2]='&nbsp;';
-
-	$homepage_content.= '<tr>
-			<td width="'.$width.' height="'.$height.'" valign="top">'.$s[0].'</td>
-			<td width="'.$width.' height="'.$height.'" valign="top">'.$s[1].'</td>
-			<td width="'.$width.' height="'.$height.'" valign="top">'.$s[2].'</td>
-		  </tr>';
-	if ($i+3<count($screenshot))$homepage_content.= '<tr><td colspan="3">&nbsp;</td></tr>';
-}
-
-$homepage_content.='
-</table>
-<h1>Galerie</h1>
-
-<table border="0" cellspacing="0" cellpadding="0">';
-
-//Sonstige Bilder
-
-$width=160;
-$height=100;
-
-for ($i=0;$i<=count($galerie);$i=$i+3)
+// Ein Bild der Galerie: Vorschaubild (Dateiname_s) als Link auf das große Bild, galerie.js öffnet es im Leuchtkasten.
+// Die Titel in c_screenshotdefs.inc.php enthalten bereits HTML-Entities und werden deshalb nicht erneut maskiert.
+function galerie_bild($datei, $titel)
 {
-  if(isset($galerie[$i]) && $galerie[$i][0]!='')$s[0]='<a class="fancybox" rel="gal1" href="images/screenshots/'.$galerie[$i][0].'" title="'.$galerie[$i][1].'"><img alt="'.$galerie[$i][1].'" title="'.$galerie[$i][1].'" src="'.$url.str_replace('.', '_s.',$galerie[$i][0]).'" border="0" align="top"></a>';
-  else $s[0]='&nbsp;';
-  if(isset($galerie[$i+1]) && $galerie[$i+1][0]!='')$s[1]='<a class="fancybox" rel="gal1" href="images/screenshots/'.$galerie[$i+1][0].'" title="'.$galerie[$i+1][1].'"><img alt="'.$galerie[$i+1][1].'" title="'.$galerie[$i+1][1].'" src="'.$url.str_replace('.', '_s.',$galerie[$i+1][0]).'" border="0" align="top"></a>';
-  else $s[1]='&nbsp;';
-  if(isset($galerie[$i+2]) && $galerie[$i+2][0]!='')$s[2]='<a class="fancybox" rel="gal1" href="images/screenshots/'.$galerie[$i+2][0].'" title="'.$galerie[$i+2][1].'"><img alt="'.$galerie[$i+2][1].'" title="'.$galerie[$i+2][1].'" src="'.$url.str_replace('.', '_s.',$galerie[$i+2][0]).'" border="0" align="top"></a>';
-  else $s[2]='&nbsp;';
-
-  $homepage_content.= '<tr>
-          <td width="'.$width.' height="'.$height.'" valign="top">'.$s[0].'</td>
-          <td width="'.$width.' height="'.$height.'" valign="top">'.$s[1].'</td>
-          <td width="'.$width.' height="'.$height.'" valign="top">'.$s[2].'</td>
-        </tr>';
-  if ($i+3<count($galerie))$homepage_content.= '<tr><td colspan="3">&nbsp;</td></tr>';
+    global $url;
+    $gross = $url . $datei;
+    $klein = $url . str_replace('.', '_s.', $datei);
+    return '<a class="galerie-bild" href="' . h($gross) . '" data-titel="' . $titel . '">'
+         . '<img src="' . h($klein) . '" alt="' . $titel . '" loading="lazy"></a>';
 }
 
-$homepage_content.='</table>';
+// Galerie nach Rassen, Gebäuden, Forschungen und Entwürfen gruppieren (Reihenfolge wie in den Definitionen)
+$gruppen = array();
+foreach ($galerie as $eintrag) {
+    if (!isset($eintrag[2])) {
+        $gruppe = 'Entw&uuml;rfe und Sonstiges';
+    } elseif ($eintrag[2] == -1) {
+        $gruppe = ($eintrag[3] < 40) ? 'Geb&auml;ude' : 'Forschungen';
+    } else {
+        $gruppe = $rassen[$eintrag[2]];
+    }
+    $gruppen[$gruppe][] = galerie_bild($eintrag[0], $eintrag[1]);
+}
 
-$homepage_content.='<script type="text/javascript">
-		$(document).ready(function() {
+$homepage_content = '
+<h1>Screenshots</h1>
+<p class="einleitung">Zum Vergr&ouml;&szlig;ern auf ein Bild klicken.</p>
 
-			$(".fancybox").fancybox({
-				"overlayShow"	: false,
-				"titlePosition"  : "inside",
-				"transitionIn"	: "elastic",
-				"transitionOut"	: "elastic"
-			});
+<h2>Spielansichten</h2>
+<div class="galerie">';
+foreach ($screenshot as $eintrag) {
+    $homepage_content .= galerie_bild($eintrag[0], $eintrag[1]);
+}
+$homepage_content .= '</div>
 
-		});
-	</script>
-';
+<h2>Galerie</h2>';
+foreach ($gruppen as $name => $bilder) {
+    $homepage_content .= '<h3>' . $name . '</h3><div class="galerie">' . implode('', $bilder) . '</div>';
+}
 
-include "page.inc.php";
-?>
+// Leuchtkasten, gefüllt von js/galerie.js. Ohne JavaScript öffnen die Links das große Bild direkt.
+$homepage_content .= '
+<dialog class="leuchtkasten" id="leuchtkasten" aria-label="Bildansicht">
+    <button type="button" class="lk-knopf lk-schliessen" data-lk="schliessen" aria-label="Schlie&szlig;en">&times;</button>
+    <button type="button" class="lk-knopf lk-zurueck" data-lk="zurueck" aria-label="Vorheriges Bild">&lsaquo;</button>
+    <figure><img src="" alt=""><figcaption></figcaption></figure>
+    <button type="button" class="lk-knopf lk-weiter" data-lk="weiter" aria-label="N&auml;chstes Bild">&rsaquo;</button>
+</dialog>';
+
+include 'page.inc.php';

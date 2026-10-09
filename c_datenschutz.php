@@ -1,12 +1,13 @@
 <?php
-$homepage_title='DIE EWIGEN - Das Browsergame';
+include_once 'site.inc.php';
+
+$homepage_title='Datenschutzerklärung | Die Ewigen';
 
 $homepage_meta='
-<META Name="keywords" Content="Die Ewigen, www.die-ewigen.com, MMORPG, MMORS, Online, Game, Universum, Erhabener, Handel, Krieg, Strategie, Diplomatie, browsergame, browsergames, onlinespiel, onlinespiele, online spiel, online spiele, onlinegame, onlinegames, krieg, kriege, epische schlachten, handel, kostenlos, kostenfrei, Impressum, Abuse">
-<meta name="description" content="Datenschutz">';
+<meta name="description" content="Datenschutzerklärung von Die Ewigen">';
 
 $homepage_content='
-<h4>Datenschutzerklärung</h4>
+<h1>Datenschutzerklärung</h1>
 
 <p>Wir freuen uns sehr über Ihr Interesse an unserem Unternehmen. Datenschutz hat einen besonders hohen Stellenwert für die Geschäftsleitung der DIE EWIGEN. Eine Nutzung der Internetseiten der DIE EWIGEN ist grundsätzlich ohne jede Angabe personenbezogener Daten möglich. Sofern eine betroffene Person besondere Services unseres Unternehmens über unsere Internetseite in Anspruch nehmen möchte, könnte jedoch eine Verarbeitung personenbezogener Daten erforderlich werden. Ist die Verarbeitung personenbezogener Daten erforderlich und besteht für eine solche Verarbeitung keine gesetzliche Grundlage, holen wir generell eine Einwilligung der betroffenen Person ein.</p>
 

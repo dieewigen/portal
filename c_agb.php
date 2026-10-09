@@ -1,15 +1,16 @@
 <?php
-$homepage_title='DIE EWIGEN - Das Browsergame';
+include_once 'site.inc.php';
+
+$homepage_title='Regeln und Nutzungsbedingungen | Die Ewigen';
 
 $homepage_meta='
-<META Name="keywords" Content="Die Ewigen, www.die-ewigen.com, MMORPG, MMORS, Online, Game, Universum, Erhabener, Handel, Krieg, Strategie, Diplomatie, browsergame, browsergames, onlinespiel, onlinespiele, online spiel, online spiele, onlinegame, onlinegames, krieg, kriege, epische schlachten, handel, kostenlos, kostenfrei, Impressum, Abuse">
-<meta name="description" content="Nutzungsbedingungen">
+<meta name="description" content="Nutzungsbedingungen und Spielregeln von Die Ewigen">
 ';
 
 //<P>The English version is below.</P>
 $homepage_content='
 
-<div style="font-size: 24px;">Nutzungsbedingungen</div><br>
+<h1>Nutzungsbedingungen</h1>
 
 <P><U>I. Registrierung</U></P>
 <OL>
