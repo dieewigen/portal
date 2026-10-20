@@ -12,6 +12,7 @@
         </ul>
     </div>
 </footer>
+<?php echo zaehlpixel(); ?>
 <?php echo $homepage_scripts; ?>
 </body>
 </html>
