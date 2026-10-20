@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# https und www erzwingen, beides in einer Weiterleitung
+# (die Hilfe nutzt dieselbe https-Regel; die Weiterleitung der Apex-Domain auf www macht der Hoster)
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\.die-ewigen\.com$ [NC]
+RewriteRule ^(.*)$ https://www.die-ewigen.com/$1 [R=301,L]

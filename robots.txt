@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+# Bildanzeige fuer Links aus dem Spiel, nicht indexieren
+Disallow: /si.php
+
+Sitemap: https://www.die-ewigen.com/sitemap.xml
